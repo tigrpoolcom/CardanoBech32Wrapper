@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31829.152
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardanoBech32", "CardanoBech32\CardanoBech32.csproj", "{CA682261-4F07-4CE6-9F29-0D4F1B4768C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardanoBech32Test", "CardanoBech32Test\CardanoBech32Test.csproj", "{841DD95F-EFD4-4C87-83D4-63F7D249C664}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA682261-4F07-4CE6-9F29-0D4F1B4768C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA682261-4F07-4CE6-9F29-0D4F1B4768C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA682261-4F07-4CE6-9F29-0D4F1B4768C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA682261-4F07-4CE6-9F29-0D4F1B4768C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{841DD95F-EFD4-4C87-83D4-63F7D249C664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{841DD95F-EFD4-4C87-83D4-63F7D249C664}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{841DD95F-EFD4-4C87-83D4-63F7D249C664}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{841DD95F-EFD4-4C87-83D4-63F7D249C664}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CD1A3E19-8E78-447B-8B58-723440F8553D}
+	EndGlobalSection
+EndGlobal
