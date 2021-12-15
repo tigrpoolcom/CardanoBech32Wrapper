@@ -1,4 +1,4 @@
-# CardanoBech32Wrapper
+# CardanoBech32Wrapper based on bech32
 ## What is it ?
 The CardanoBech32Wrapper is a C# Library which can be used to encode or decode bech32 strings.
 This can be helpful if you want to see if multiple addresses belong to one stake key (e.g. wallet), even if they are not used yet on cardano.
