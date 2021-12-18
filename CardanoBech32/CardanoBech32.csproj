@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\readme.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
 
 </Project>
