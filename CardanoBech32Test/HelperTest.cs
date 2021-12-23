@@ -67,5 +67,16 @@ namespace CardanoBech32Test
       Assert.IsFalse(Helper.IsDigitLetterUnderscoreWhitespace(validValue));
     }
 
+    [DataTestMethod]
+    [DataRow(" ")]
+    [DataRow("")]
+    [DataRow("*'*$§")]
+    [DataRow(null)]
+    public void ConvertByteToHexString_Returns_EmptyString(string validValue)
+    {
+        var validTest = Helper.ConvertHexStringToByte(validValue);
+        Assert.AreEqual(Helper.ConvertByteToHexString(validTest), string.Empty);
+    }
+
   }
 }

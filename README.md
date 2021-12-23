@@ -5,9 +5,17 @@ This can be helpful if you want to see if multiple addresses belong to one stake
 
 
 ## Current Possibilities
-- Convert from Bech32 Addresses into Hex
-- Convert from Hex Addresses into Hex 
-- Support for mainnet and testnet
+- Convert Bech32 format into Hex format
+- Convert Hex format into Bech32 format
+- Supported Cardano address types
+  - Mainnet
+    - addr1
+    - pool1
+    - stake1
+  - Testnet
+    - addr_test1
+    - pool_test1
+    - stake_test1
 - No dependencies except for this library
 - NetStandard 2.0
 

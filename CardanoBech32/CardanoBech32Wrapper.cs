@@ -10,6 +10,8 @@ namespace CardanoBech32
     {
       if (inBech32 == null) return null;
 
+      inBech32 = inBech32.Trim();
+
       string hrp;
       byte[] data;
       Bech32Engine.Decode(inBech32, out hrp, out data);
@@ -21,6 +23,8 @@ namespace CardanoBech32
     public string ConvertToBech32AddressFromHex(string inHex, AddressType addressType)
     {
       if (inHex == null) return null;
+
+      inHex = inHex.Trim();
 
       var asByte = Helper.ConvertHexStringToByte(inHex);
 
@@ -58,11 +62,31 @@ namespace CardanoBech32
 
   public enum AddressType
   {
+    /// <summary>
+    /// Mainnet Address
+    /// </summary>
     addr,
+    /// <summary>
+    /// Mainnet Stake Address
+    /// </summary>
     stake,
+    /// <summary>
+    /// Mainnet Pool Address
+    /// </summary>
+    pool,
     //asset,
+    /// <summary>
+    /// Testnet Address
+    /// </summary>
     addr_test,
+    /// <summary>
+    /// Testnet Stake Address
+    /// </summary>
     stake_test,
+    /// <summary>
+    /// Testnet Stake Address
+    /// </summary>
+    pool_test,
     //asset_test
   }
 }

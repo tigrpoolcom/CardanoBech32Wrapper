@@ -20,7 +20,8 @@ namespace CardanoBech32Test
 
     [DataTestMethod]
     [DataRow("addr1qxkmuf2gqzsm5ejxm2amrwuq3pcc02cw6tttgsgqgafj46klskg5jjufdyf4znw8sjn37enwn5ge5l66qsx8srrpg3tq8du7us", "01adbe254800a1ba6646dabbb1bb80887187ab0ed2d6b4410047532aeadf8591494b896913514dc784a71f666e9d119a7f5a040c780c614456")]
-    [DataRow("addr1qx2ezq7geqclknv0n3nhf09c48acm3lpq93frnxhrt84fvkmtgh4vcg6t6ujpr9yrf3gnndc6uufn7xvu2sjqkwqlgkqzq5xdt", "01959103c8c831fb4d8f9c6774bcb8a9fb8dc7e1016291ccd71acf54b2db5a2f56611a5eb9208ca41a6289cdb8d73899f8cce2a12059c0fa2c")]
+    [DataRow("pool1r8zkh6zns7rtpvwa466qf8a0dgqd7r9zmu27qkcyw25xv46y97s", "19c56be8538786b0b1ddaeb4049faf6a00df0ca2df15e05b0472a866")]
+    [DataRow(" pool1r8zkh6zns7rtpvwa466qf8a0dgqd7r9zmu27qkcyw25xv46y97s ", "19c56be8538786b0b1ddaeb4049faf6a00df0ca2df15e05b0472a866")]
 
     public void ConvertToHexAddressFromBech32_IsHex_True(string address, string addressInHexCheck)
     {
@@ -33,9 +34,13 @@ namespace CardanoBech32Test
       AddressType.addr,
       "addr1qxkmuf2gqzsm5ejxm2amrwuq3pcc02cw6tttgsgqgafj46klskg5jjufdyf4znw8sjn37enwn5ge5l66qsx8srrpg3tq8du7us")]
     [DataRow(
-       "01959103c8c831fb4d8f9c6774bcb8a9fb8dc7e1016291ccd71acf54b2db5a2f56611a5eb9208ca41a6289cdb8d73899f8cce2a12059c0fa2c", 
-      AddressType.addr,
-      "addr1qx2ezq7geqclknv0n3nhf09c48acm3lpq93frnxhrt84fvkmtgh4vcg6t6ujpr9yrf3gnndc6uufn7xvu2sjqkwqlgkqzq5xdt")]
+       "19c56be8538786b0b1ddaeb4049faf6a00df0ca2df15e05b0472a866", 
+      AddressType.pool,
+      "pool1r8zkh6zns7rtpvwa466qf8a0dgqd7r9zmu27qkcyw25xv46y97s")]
+    [DataRow(
+       " 19c56be8538786b0b1ddaeb4049faf6a00df0ca2df15e05b0472a866 ",
+      AddressType.pool,
+      "pool1r8zkh6zns7rtpvwa466qf8a0dgqd7r9zmu27qkcyw25xv46y97s")]
     //[DataRow(
     //   "b84d709a29b5f2f0f79d48941df55d3e5823a1ecc290a6091d1f6841437574794d616c3031373830",
     //  AddressType.asset,
