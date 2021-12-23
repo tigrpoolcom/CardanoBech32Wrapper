@@ -19,8 +19,21 @@ This can be helpful if you want to see if multiple addresses belong to one stake
 - No dependencies except for this library
 - NetStandard 2.0
 
+## Nuget Package
+We created a Nuget Package called `CardanoBech32`.
+You can find it [here](https://www.nuget.org/packages/CardanoBech32/)
+
+## Embedded into API
+You can use these functionalities now also via our CutyMals Cardano API.
+Endpoint which provides the functionalities is `/api/CardanoTools`.
+
+[Mainnet Cardano API](https://mainnet.cutymals.com/swagger)
+
+[Testnet Cardano API](https://testnet.cutymals.com/swagger)
+
 ## Next Steps
 - Include converter of PolicyId+Assetname into Asset Fingerprintsfingerprint
-- Provide it as a nuget for easy integration in C# projects
-- Embedd it into the [CutyMal Cardano API](https://github.com/tigrpoolcom/cardano-web-api) to open up tooling for non C# languages, via simple rest calls
 
+## Questions or problems ?
+Contact us on [Twitter](https://mobile.twitter.com/cutymalscom) 
+or directly on Github.
