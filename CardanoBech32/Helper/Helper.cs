@@ -9,7 +9,8 @@ namespace CardanoBech32
   {
     public static byte[] ConvertHexStringToByte(string input)
     {
-      if (!IsHex(input)) return Array.Empty<byte>();
+      input = input?.Trim();
+      if (!IsHex(input) || string.IsNullOrWhiteSpace(input)) return Array.Empty<byte>();
 
       if (input.Length % 2 == 1) throw new Exception("The binary key cannot have an odd number of digits");
 
@@ -48,6 +49,32 @@ namespace CardanoBech32
       return BitConverter.ToString(input).Replace("-", string.Empty).ToLower();
 
     }
+    public static bool TryConvertByteToHexString(byte[] input, out string valueInHex)
+    {
+      var result = ConvertByteToHexString(input);
+      if(!string.IsNullOrWhiteSpace(result) && IsHex(result))
+      {
+        valueInHex = result;
+        return true;
+      }
+
+      valueInHex = null;
+      return false;
+    }
+    public static bool TryConvertHexStringToByte(string input, out byte[] valueInHex)
+    {
+      var result = ConvertHexStringToByte(input);
+
+      if (result != null && result.Length > 0)
+      {
+        valueInHex = result;
+        return true;
+      }
+
+      valueInHex = null;
+      return false;
+    }
+
     public static string ConvertByteToUTF8String(byte[] input)
     {
       if (input == null) return string.Empty;

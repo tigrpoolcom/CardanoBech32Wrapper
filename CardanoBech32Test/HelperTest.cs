@@ -95,5 +95,56 @@ namespace CardanoBech32Test
       Assert.AreEqual(Helper.IsBech32ToHexConvertible(validValue), false);
     }
 
+
+
+    [DataTestMethod]
+    [DataRow("82d818584283581cf61ebfbc2585045b2cc58762bc9197126d98ccb4359106f9fa326022a101581e581c3083349abf53ea9337bbdf50d390207234af2ea48028f2baa18b3128001aa0eb1924")]
+    [DataRow("61a061ae00b0f8e07b359fead1a1f9072ec2aee1e78486d7830adcf273")]
+    [DataRow(" 61a061ae00b0f8e07b359fead1a1f9072ec2aee1e78486d7830adcf273")]
+    public void TryConvertHexStringToByte_Returns_True(string validValue)
+    {
+      Assert.AreEqual(Helper.TryConvertHexStringToByte(validValue, out var valueInHex ), true);
+      Assert.AreNotEqual(valueInHex, null);
+    }
+
+    [DataTestMethod]
+    [DataRow(" ")]
+    [DataRow("DdzFFzCqrhsmMp7k6EpXzRLrBV2bH69Dr3Lq46ftRj3LovzPghDQbn4m5XnyR1yXeSbxnipkQ4UVfp7yuxFGsFTNAPxedktYou2H24qV")]
+    [DataRow("61a061ae00b0f8e07b359fead1a1 f9072ec2aee1e78486d7830adcf273")]
+    [DataRow(null)]
+    public void TryConvertHexStringToByte_Returns_False(string validValue)
+    {
+      Assert.AreEqual(Helper.TryConvertHexStringToByte(validValue, out var valueInHex), false);
+      Assert.IsNull(valueInHex);
+    }
+
+    [DataTestMethod]
+    [DataRow("82d818584283581cf61ebfbc2585045b2cc58762bc9197126d98ccb4359106f9fa326022a101581e581c3083349abf53ea9337bbdf50d390207234af2ea48028f2baa18b3128001aa0eb1924")]
+    [DataRow("61a061ae00b0f8e07b359fead1a1f9072ec2aee1e78486d7830adcf273")]
+    [DataRow(" 61a061ae00b0f8e07b359fead1a1f9072ec2aee1e78486d7830adcf273")]
+    public void TryConvertByteToHexString_Returns_True(string validValue)
+    {
+      Helper.TryConvertHexStringToByte(validValue, out var valueInHex);
+
+     
+      Assert.AreEqual(Helper.TryConvertByteToHexString(valueInHex, out var valueInHexString), true);
+      Assert.AreEqual(valueInHexString, validValue.Trim());
+    }
+
+    [DataTestMethod]
+    [DataRow(" ")]
+    [DataRow("DdzFFzCqrhsmMp7k6EpXzRLrBV2bH69Dr3Lq46ftRj3LovzPghDQbn4m5XnyR1yXeSbxnipkQ4UVfp7yuxFGsFTNAPxedktYou2H24qV")]
+    [DataRow("61a061ae00b0f8e07b359fead1a1 f9072ec2aee1e78486d7830adcf273")]
+    [DataRow(null)]
+    public void TryConvertByteToHexString_Returns_False(string validValue)
+    {
+      Helper.TryConvertHexStringToByte(validValue, out var valueInHex);
+
+
+      Assert.AreEqual(Helper.TryConvertByteToHexString(valueInHex, out var valueInHexString), false);
+      Assert.IsNull(valueInHexString);
+    }
+
+
   }
 }
