@@ -23,6 +23,15 @@ This can be helpful if you want to see if multiple addresses belong to one stake
 We created a Nuget Package called `CardanoBech32`.
 You can find it [here](https://www.nuget.org/packages/CardanoBech32/)
 
+## Github Repository
+Code can be found [here](https://github.com/tigrpoolcom/CardanoBech32Wrapper).
+Do a PR if you miss something or contact us.
+
+## How to use
+Check out our test cases to understand how to use it
+- [CardanoBech32](https://github.com/tigrpoolcom/CardanoBech32Wrapper/blob/master/CardanoBech32Test/CardanoBech32Test.cs)
+- [Helper](https://github.com/tigrpoolcom/CardanoBech32Wrapper/blob/master/CardanoBech32Test/HelperTest.cs)
+
 ## Embedded into API
 You can use these functionalities now also via our CutyMals Cardano API.
 Endpoint which provides the functionalities is `/api/CardanoTools`.
