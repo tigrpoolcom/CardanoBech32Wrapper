@@ -130,5 +130,22 @@ namespace CardanoBech32
       return true;
     }
 
+    public static bool IsBech32ToHexConvertible(string addr)
+    {
+      if (string.IsNullOrWhiteSpace(addr)) return false;
+
+      var lowAdr = addr.ToLower();
+      var highAdr = addr.ToUpper();
+
+      // if there's mixed case, that's not OK
+      if (addr != lowAdr && addr != highAdr)
+      {
+        return false;
+      }
+
+      return addr.IndexOf("1") > -1;
+    }
+
+
   }
 }

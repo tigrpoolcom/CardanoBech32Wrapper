@@ -58,6 +58,29 @@ namespace CardanoBech32
 
       return null;
     }
+
+    public bool TryConvertToHexAddressFromBech32(string inBech32, out string valueInHex)
+    {
+      if(Helper.IsBech32ToHexConvertible(inBech32))
+      {
+        valueInHex = ConvertToHexAddressFromBech32(inBech32);
+        return true;
+      }
+      valueInHex = null;
+      return false;
+    }
+
+    public bool TryConvertToHexAddressFromBech32(string inBech32, out byte[] valueInHex)
+    {
+      if (Helper.IsBech32ToHexConvertible(inBech32))
+      {
+        var ret = ConvertToHexAddressFromBech32(inBech32);
+        valueInHex = Helper.ConvertHexStringToByte(ret);
+        return true;
+      }
+      valueInHex = null;
+      return false;
+    }
   }
 
   public enum AddressType

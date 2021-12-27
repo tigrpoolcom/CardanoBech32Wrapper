@@ -78,5 +78,22 @@ namespace CardanoBech32Test
         Assert.AreEqual(Helper.ConvertByteToHexString(validTest), string.Empty);
     }
 
+    [DataTestMethod]
+    [DataRow("addr1q94z79m3gpzcd365p7fkhus2akk0q0vdpndkf9x5w5v4jjlyaksh35p2qzfuv3dsz6352v6v3pn3wm2q4vz3m8key9fqlpaslx")]
+    [DataRow("addr1qxq47au29wss4g8acjk0zsmwwq0h34hhzump6stye9wuldm7nm0t6ad3jz9hy5v3smye0nvcumtzu43k7r36ag0w29qqdafvvk")]
+    public void IsBech32ToHexConvertible_Returns_True(string validValue)
+    {
+      Assert.AreEqual(Helper.IsBech32ToHexConvertible(validValue), true);
+    }
+
+    [DataTestMethod]
+    [DataRow(" ")]
+    [DataRow("DdzFFzCqrhsmMp7k6EpXzRLrBV2bH69Dr3Lq46ftRj3LovzPghDQbn4m5XnyR1yXeSbxnipkQ4UVfp7yuxFGsFTNAPxedktYou2H24qV")]
+    [DataRow(null)]
+    public void IsBech32ToHexConvertible_Returns_False(string validValue)
+    {
+      Assert.AreEqual(Helper.IsBech32ToHexConvertible(validValue), false);
+    }
+
   }
 }
