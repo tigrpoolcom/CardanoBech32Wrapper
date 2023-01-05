@@ -4,7 +4,6 @@ namespace CardanoBech32
 {
   public class CardanoBech32Wrapper : ICardanoBech32Wrapper
   {
-    
     public string ConvertToHexAddressFromBech32(string inBech32)
     {
       if (inBech32 == null) return null;
