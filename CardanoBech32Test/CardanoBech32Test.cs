@@ -1,10 +1,5 @@
 ﻿using CardanoBech32;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CardanoBech32Test
 {
@@ -55,14 +50,12 @@ namespace CardanoBech32Test
     [DataTestMethod]
     [DataRow("addr1qx2ezq7geqclknv0n3nhf09c48acm3lpq93frnxhrt84fvkmtgh4vcg6t6ujpr9yrf3gnndc6uufn7xvu2sjqkwqlgkqzq5xdt", "stake1u8d45t6kvyd9awfq3jjp5c5fekudwwyelrxw9gfqt8q05tq3j8dxa")]
     [DataRow("addr1qxdvcswn0exwc2vjfr6u6f6qndfhmk94xjrt5tztpelyk4yg83zn9d4vrrtzs98lcl5u5q6mv7ngmg829xxvy3g5ydls7c76wu", "stake1uxyrc3fjk6kp343gznlu06w2qddk0f5d5r4znrxzg52zxlclk0hlq")]
+    [DataRow("addr_test1qz70gcrx7hf9v95f6wz6r2396dquznyhufcy4x89jl0fvgajwc89ewdzmexrucgl22xy2yr6ycz0q0q2g7ha3e2lk5rqwmwkzu", "stake_test1uze8vrjuhx3dunp7vy049rz9zpazvp8s8s9y0t7cu40m2psthwg0q")]
+    [DataRow("addr_test1qqhzn7ze7qwm9ush55n3ecgzq2l8uvrh7qanys9rzu5dhv4az0dlw2zsg64qcyd8jha9hqanglmxh53p0favshdyrktq9trmz3", "stake_test1uz738klh9pgyd2svzxnet7jmswe50ant6gsh57kgtkjpm9sdwq8ea")]
     public void GetStakeAddressFromAddress_IsValid_True(string address, string stakeAddressCheck)
     {
-
       var stakeAddress = _cBech32.GetStakeAddressFromAddress(address);
-
       Assert.AreEqual(stakeAddress, stakeAddressCheck);
-
     }
-
   }
 }
