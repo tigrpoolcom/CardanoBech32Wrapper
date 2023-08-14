@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CardanoBech32
 {
@@ -50,11 +48,19 @@ namespace CardanoBech32
       if (addressInHex == null) return null;
 
       int stakeAddressLength = 56;
-      var stakeAddressInHex = "e1"+ addressInHex.Substring(addressInHex.Length - stakeAddressLength, stakeAddressLength);
+      var stakeAddressInHex = addressInHex.Substring(addressInHex.Length - stakeAddressLength, stakeAddressLength);
 
-      if (address.StartsWith(AddressType.addr.ToString())) return ConvertToBech32AddressFromHex(stakeAddressInHex, AddressType.stake);
+      if (address.StartsWith(AddressType.addr_test.ToString()))
+      {
+        stakeAddressInHex = "e0" + stakeAddressInHex;
+        return ConvertToBech32AddressFromHex(stakeAddressInHex, AddressType.stake_test);
+      }
 
-      if (address.StartsWith(AddressType.addr_test.ToString())) return ConvertToBech32AddressFromHex(stakeAddressInHex, AddressType.stake_test);
+      if (address.StartsWith(AddressType.addr.ToString()))
+      {
+        stakeAddressInHex = "e1" + stakeAddressInHex;
+        return ConvertToBech32AddressFromHex(stakeAddressInHex, AddressType.stake);
+      }
 
       return null;
     }
